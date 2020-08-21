@@ -42,3 +42,15 @@ AS
 SELECT DISTINCT D.nome, PROF.nome, AU.disciplina FROM disciplinas D, professores PROF, aula AU
 WHERE AU.professor = PROF.numprof AND D.numdisp = AU.disciplina AND D.nome = 'banco de dados';
 ```
+```SQL
+CREATE VIEW NOTAS_CALCULO (DISCIP, ALUNO, CODIGO, NOTA)
+AS
+SELECT D.nome, AL.nome, AU.disciplina, AU.nota FROM disciplinas D, alunos AL, aula AU
+WHERE AU.aluno = AL.numaluno AND D.numdisp = AU.disciplina AND AU.SEMESTRE = '19981' AND D.nome = 'calculo numerico'
+GROUP BY D.nome, AL.nome, AU.disciplina, AU.nota ;
+
+CREATE VIEW RESP12 
+AS
+SELECT MIN(NOTA), MAX(NOTA) FROM NOTAS_CALCULO;
+
+```
