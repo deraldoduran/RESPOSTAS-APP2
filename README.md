@@ -11,4 +11,10 @@ AS
 SELECT CUR.nome, D.nome FROM cursos CUR, disciplinas D, contem CO
 WHERE CO.iddisciplina = D.numdisp AND CO.idcurso = CUR.numcurso AND D.nome = 'calculo numerico';
 ```
+```SQL
+CREATE VIEW RESP07 (ALUNO, DISCIPLINA, SEMESTRE)
+AS
+SELECT ALU.nome, D.nome, AU.semestre FROM disciplinas D, aula AU, alunos ALU
+WHERE D.numdisp = AU.disciplina AND ALU.numaluno = AU.aluno AND AU.semestre = '19981'AND ALU.nome ='Marcos João Casanova '; 
+```
 
