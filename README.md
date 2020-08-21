@@ -23,3 +23,10 @@ AS
 SELECT ALU.nome, D.nome, AU.semestre FROM disciplinas D, aula AU, alunos ALU
 WHERE D.numdisp = AU.disciplina AND ALU.numaluno = AU.aluno AND AU.nota<7 AND ALU.nome = 'Ailton Castro' ;
 ```
+```SQL
+CREATE VIEW RESP09 (ALUNO, DISCIPLINA, SEMESTRE, NOTA)
+AS
+SELECT ALU.nome, D.nome, AU.semestre, AU.nota FROM disciplinas D, aula AU, alunos ALU
+WHERE D.numdisp = AU.disciplina AND ALU.numaluno = AU.aluno AND AU.nota<7 
+AND AU.semestre = '19981' AND D.nome = 'calculo numerico';
+```
