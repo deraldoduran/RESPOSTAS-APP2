@@ -17,4 +17,9 @@ AS
 SELECT ALU.nome, D.nome, AU.semestre FROM disciplinas D, aula AU, alunos ALU
 WHERE D.numdisp = AU.disciplina AND ALU.numaluno = AU.aluno AND AU.semestre = '19981'AND ALU.nome ='Marcos João Casanova '; 
 ```
-
+```SQL
+CREATE VIEW RESP08 (ALUNO, DISCIPLINA, SEMESTRE)
+AS
+SELECT ALU.nome, D.nome, AU.semestre FROM disciplinas D, aula AU, alunos ALU
+WHERE D.numdisp = AU.disciplina AND ALU.numaluno = AU.aluno AND AU.nota<7 AND ALU.nome = 'Ailton Castro' ;
+```
