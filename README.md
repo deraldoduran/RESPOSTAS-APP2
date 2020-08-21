@@ -36,3 +36,9 @@ AS
 SELECT DISTINCT D.nome, PROF.nome, AU.disciplina FROM disciplinas D, professores PROF, aula AU
 WHERE AU.professor = PROF.numprof AND D.numdisp = AU.disciplina AND PROF.nome = ' Ramon Travanti';
 ```
+```SQL
+CREATE VIEW RESP11 (DISCIPLINA, PROFESSOR, CODIGO)
+AS
+SELECT DISTINCT D.nome, PROF.nome, AU.disciplina FROM disciplinas D, professores PROF, aula AU
+WHERE AU.professor = PROF.numprof AND D.numdisp = AU.disciplina AND D.nome = 'banco de dados';
+```
