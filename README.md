@@ -30,3 +30,9 @@ SELECT ALU.nome, D.nome, AU.semestre, AU.nota FROM disciplinas D, aula AU, aluno
 WHERE D.numdisp = AU.disciplina AND ALU.numaluno = AU.aluno AND AU.nota<7 
 AND AU.semestre = '19981' AND D.nome = 'calculo numerico';
 ```
+```SQL
+CREATE VIEW RESP10 (DICIPLINA, NOME, CODIGO)
+AS
+SELECT DISTINCT D.nome, PROF.nome, AU.disciplina FROM disciplinas D, professores PROF, aula AU
+WHERE AU.professor = PROF.numprof AND D.numdisp = AU.disciplina AND PROF.nome = ' Ramon Travanti';
+```
