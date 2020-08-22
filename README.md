@@ -75,6 +75,13 @@ AND AU.semestre = '19981'
 ORDER BY ALU.nome;
 ```
 ```SQL
+CREATE VIEW RESP15 (ALUNO, DISCIPLINA, NOTA)
+AS
+SELECT ALU.nome, DIS.nome, AU.NOTA FROM alunos ALU, disciplinas DIS, aula AU, matricula MA, cursos CUR
+WHERE AU.aluno = ALU.numaluno AND AU.disciplina = DIS.numdisp AND AU.semestre = '19981'
+AND ALU.numaluno = MA.aluno AND MA.CURSO = CUR.numcurso AND CUR.nome = 'Ciencia_computacao';
+```
+```SQL
 CREATE VIEW RESP19
 AS
 SELECT COUNT(AU.ALUNO), P.NOME FROM AULA AU, PROFESSORES P
