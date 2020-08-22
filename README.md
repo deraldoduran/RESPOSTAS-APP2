@@ -82,6 +82,17 @@ WHERE AU.aluno = ALU.numaluno AND AU.disciplina = DIS.numdisp AND AU.semestre = 
 AND ALU.numaluno = MA.aluno AND MA.CURSO = CUR.numcurso AND CUR.nome = 'Ciencia_computacao';
 ```
 ```SQL
+CREATE VIEW NOTAS_MARCOS
+AS
+SELECT  AU.nota AS NOTAS, PRO.nome AS PROFESSOR FROM aula AU, professores PRO
+WHERE AU.professor = PRO.numprof AND PRO.nome = ' Marcos Salvador'
+GROUP BY PRO.nome, AU.nota ;
+
+CREATE VIEW RESP16
+AS
+SELECT AVG(NOTAS) FROM NOTAS_MARCOS;
+```
+```SQL
 CREATE VIEW RESP19
 AS
 SELECT COUNT(AU.ALUNO), P.NOME FROM AULA AU, PROFESSORES P
